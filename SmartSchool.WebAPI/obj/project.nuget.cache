@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "DkQUFQKj1WBmpi14gN7Fj7ClXG+1qy01Inbxe3EcQQdvpeVlm62QWJ378ngLdhrHJtXQoyimlEUikUoOZ4iMmA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\cmsulzbeck\\OneDrive\\Área de Trabalho\\SmartSchool\\SmartSchool.WebAPI\\SmartSchool.WebAPI.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\cmsulzbeck\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\cmsulzbeck\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\cmsulzbeck\\.nuget\\packages\\swashbuckle.aspnetcore\\5.6.3\\swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
+    "C:\\Users\\cmsulzbeck\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.6.3\\swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
+    "C:\\Users\\cmsulzbeck\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\5.6.3\\swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",
+    "C:\\Users\\cmsulzbeck\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\5.6.3\\swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512"
+  ],
+  "logs": []
+}
