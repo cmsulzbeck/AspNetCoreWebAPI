@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "dGGpFPDRLoWgdVZjNDJTB8Cad9bSerJyfHN2732LZnWyV1EoJ03IlRqWqEJKlVQcZy3qzoNpW+8Uv+QGOW2DIA==",
+  "dgSpecHash": "Xvxhd0fm4Of7V9g5dtlIiTnGPxx5Fq7vj+/J61YjhcI6Xiani6itmbEBr/Pf7DQNCt6tdDE5JvSleOSnkp3Cdw==",
   "success": true,
   "projectFilePath": "C:\\Users\\cmsulzbeck\\OneDrive\\Área de Trabalho\\SmartSchool\\SmartSchool.WebAPI\\SmartSchool.WebAPI.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\cmsulzbeck\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
+    "C:\\Users\\cmsulzbeck\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",
     "C:\\Users\\cmsulzbeck\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\cmsulzbeck\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\5.0.5\\microsoft.aspnetcore.jsonpatch.5.0.5.nupkg.sha512",
     "C:\\Users\\cmsulzbeck\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\5.0.5\\microsoft.aspnetcore.mvc.newtonsoftjson.5.0.5.nupkg.sha512",
@@ -43,7 +45,8 @@
     "C:\\Users\\cmsulzbeck\\.nuget\\packages\\system.collections.immutable\\5.0.0\\system.collections.immutable.5.0.0.nupkg.sha512",
     "C:\\Users\\cmsulzbeck\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512",
     "C:\\Users\\cmsulzbeck\\.nuget\\packages\\system.diagnostics.diagnosticsource\\5.0.1\\system.diagnostics.diagnosticsource.5.0.1.nupkg.sha512",
-    "C:\\Users\\cmsulzbeck\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512"
+    "C:\\Users\\cmsulzbeck\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",
+    "C:\\Users\\cmsulzbeck\\.nuget\\packages\\system.reflection.emit\\4.7.0\\system.reflection.emit.4.7.0.nupkg.sha512"
   ],
   "logs": []
 }
