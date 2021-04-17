@@ -1,11 +1,14 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -41,22 +44,92 @@ namespace SmartSchool.WebAPI
                             
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             
-            services.AddSwaggerGen(c =>
+            services.AddScoped<IRepository, Repository>();
+
+            services.AddVersionedApiExplorer(options => 
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "SmartSchool.WebAPI", Version = "v1" });
+                options.GroupNameFormat = "'v'VVV";
+                options.SubstituteApiVersionInUrl = true;
+            })
+            .AddApiVersioning(options =>
+            {
+                options.AssumeDefaultVersionWhenUnspecified = true;
+                options.DefaultApiVersion = new ApiVersion(1, 0);
+                options.ReportApiVersions = true;
             });
 
-            services.AddScoped<IRepository, Repository>();
+            var apiProviderDescription = services.BuildServiceProvider()
+                                                 .GetService<IApiVersionDescriptionProvider>();
+
+            services.AddSwaggerGen(options => 
+            {
+                foreach (var description in apiProviderDescription.ApiVersionDescriptions)
+                {
+                    options.SwaggerDoc(description.GroupName, new OpenApiInfo(){
+                        Title = "SmartSchool API",
+                        Version = description.ApiVersion.ToString(),
+                        // TermsOfService = new Uri("http://SeusTermosDeUso.com"),
+                        Description = "A descrição da WebApi do SmartSchool",
+                        License = new OpenApiLicense
+                        {
+                            Name = "SmartSchool License",
+                            // Url = new Uri("http://mit.com")
+                        },
+                        Contact = new OpenApiContact
+                        {
+                            Name = "Carlo Maschi Sulzbeck",
+                            Email = "cmsulzbeck@hotmail.com",
+                            Url = new Uri("https://github.com/cmsulzbeck")
+                        }
+                    });
+                }
+                
+                options.SwaggerDoc("smartschoolapi", new OpenApiInfo(){
+                    Title = "SmartSchool API",
+                    Version = "1.0",
+                    // TermsOfService = new Uri("http://SeusTermosDeUso.com"),
+                    Description = "A descrição da WebApi do SmartSchool",
+                    License = new OpenApiLicense
+                    {
+                        Name = "SmartSchool License",
+                        // Url = new Uri("http://mit.com")
+                    },
+                    Contact = new OpenApiContact
+                    {
+                        Name = "Carlo Maschi Sulzbeck",
+                        Email = "cmsulzbeck@hotmail.com",
+                        Url = new Uri("https://github.com/cmsulzbeck")
+                    }
+                });
+
+                var xmlCommentsFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlFullPath = Path.Combine(AppContext.BaseDirectory, xmlCommentsFile);
+
+                options.IncludeXmlComments(xmlFullPath);
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app,
+                              IWebHostEnvironment env,
+                              IApiVersionDescriptionProvider apiProviderDescription)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "SmartSchool.WebAPI v1"));
+                app.UseSwagger()
+                    .UseSwaggerUI(options => 
+                    {
+                        foreach (var description in apiProviderDescription.ApiVersionDescriptions)
+                        {
+                            options.SwaggerEndpoint(
+                                $"/swagger/{description.GroupName}/swagger.json",
+                                 description.GroupName.ToUpperInvariant());
+                        }
+
+                        options.RoutePrefix = "";
+                    });
+                //app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "SmartSchool.WebAPI v1"));
             }
 
             // app.UseHttpsRedirection();

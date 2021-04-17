@@ -1,0 +1,190 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SmartSchool.WebAPI</name>
+    </assembly>
+    <members>
+        <member name="T:SmartSchool.WebAPI.Controllers.AlunoController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:SmartSchool.WebAPI.Controllers.AlunoController._repo">
+            <summary>
+            Dependency injection on IRepository and IMapper
+            </summary>
+        </member>
+        <member name="M:SmartSchool.WebAPI.Controllers.AlunoController.#ctor(SmartSchool.WebAPI.Data.IRepository,AutoMapper.IMapper)">
+            <summary>
+            Constructor for AlunoController
+            </summary>
+            <param name="repo"></param>
+            <param name="mapper"></param>
+        </member>
+        <member name="M:SmartSchool.WebAPI.Controllers.AlunoController.Get">
+            <summary>
+            Method for returning all Students
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SmartSchool.WebAPI.Controllers.AlunoController.GetRegister">
+            <summary>
+            Method for returning all StudentsDTO
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SmartSchool.WebAPI.Controllers.AlunoController.GetById(System.Int32)">
+            <summary>
+            Method for returning a single Student based off provided ID
+            </summary>
+            <param name="id">ID do Aluno</param>
+            <returns></returns>
+        </member>
+        <member name="M:SmartSchool.WebAPI.Controllers.AlunoController.Post(SmartSchool.WebAPI.Dtos.AlunoRegistrarDto)">
+            <summary>
+            Method for adding a Student to DataBase
+            </summary>
+            <param name="model">Objeto da classe DTO para inclusão no banco de dados</param>
+            <returns></returns>
+        </member>
+        <member name="M:SmartSchool.WebAPI.Controllers.AlunoController.Put(System.Int32,SmartSchool.WebAPI.Dtos.AlunoRegistrarDto)">
+            <summary>
+            Method for updating a Student in the DataBase
+            </summary>
+            <param name="id">ID do Aluno a ser atualizado</param>
+            <param name="model">Objeto da classe AlunoDTO para atualização</param>
+            <returns></returns>
+        </member>
+        <member name="M:SmartSchool.WebAPI.Controllers.AlunoController.Patch(System.Int32,SmartSchool.WebAPI.Dtos.AlunoRegistrarDto)">
+            <summary>
+            Method for updating partially a Student in the DataBase
+            </summary>
+            <param name="id">ID do Aluno a ser alterado parcialmente</param>
+            <param name="model">Objeto da classe AlunoDTO para atualização de banco de dados</param>
+            <returns></returns>
+        </member>
+        <member name="M:SmartSchool.WebAPI.Controllers.AlunoController.Delete(System.Int32)">
+            <summary>
+            Method for deleting a student from DataBase
+            </summary>
+            <param name="id">ID do aluno a ser deletado</param>
+            <returns></returns>
+        </member>
+        <member name="T:SmartSchool.WebAPI.Controllers.ProfessorController">
+            <summary>
+            Controller Class for Professor Entity
+            </summary>
+        </member>
+        <member name="M:SmartSchool.WebAPI.Controllers.ProfessorController.#ctor(SmartSchool.WebAPI.Data.IRepository,AutoMapper.IMapper)">
+            <summary>
+            Constructor for ProfessorController Class
+            </summary>
+            <param name="repo"></param>
+            <param name="mapper"></param>
+        </member>
+        <member name="M:SmartSchool.WebAPI.Controllers.ProfessorController.Get">
+            <summary>
+            Method for returning all Professors
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SmartSchool.WebAPI.Controllers.ProfessorController.GetRegister">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SmartSchool.WebAPI.Controllers.ProfessorController.GetById(System.Int32)">
+            <summary>
+            Method for returning a single Professor by ID
+            </summary>
+            <param name="id">ID for Professor to be searched</param>
+            <returns></returns>
+        </member>
+        <member name="M:SmartSchool.WebAPI.Controllers.ProfessorController.Post(SmartSchool.WebAPI.Dtos.ProfessorRegistrarDto)">
+            <summary>
+            Method for inserting a Professor in the DataBase
+            </summary>
+            <param name="model">Object for ProfessorRegistraDTO for updating DataBase</param>
+            <returns></returns>
+        </member>
+        <member name="M:SmartSchool.WebAPI.Controllers.ProfessorController.Put(System.Int32,SmartSchool.WebAPI.Dtos.ProfessorRegistrarDto)">
+            <summary>
+            Method for Updating a Professor registry in the DataBase
+            </summary>
+            <param name="id">ID of the professor to be changed</param>
+            <param name="model">Object of ProfessorRegistrarDto to update DataBase</param>
+            <returns></returns>
+        </member>
+        <member name="M:SmartSchool.WebAPI.Controllers.ProfessorController.Patch(System.Int32,SmartSchool.WebAPI.Dtos.ProfessorRegistrarDto)">
+            <summary>
+            Method for updating Professor Registry in the database
+            </summary>
+            <param name="id">ID of the professor to be changed</param>
+            <param name="model">Object of ProfessorRegistrarDto to update DataBase</param>
+            <returns></returns>
+        </member>
+        <member name="M:SmartSchool.WebAPI.Controllers.ProfessorController.Delete(System.Int32)">
+            <summary>
+            Method for deleting Professor registry from DataBase
+            </summary>
+            <param name="id">ID of the Professor to be deleted</param>
+            <returns></returns>
+        </member>
+        <member name="P:SmartSchool.WebAPI.Dtos.AlunoDto.Id">
+            <summary>
+            Indentificador e chave do banco
+            </summary>
+        </member>
+        <member name="P:SmartSchool.WebAPI.Dtos.AlunoDto.Matricula">
+            <summary>
+            Chave do Aluno, para outros negócios na instituição
+            </summary>
+        </member>
+        <member name="P:SmartSchool.WebAPI.Dtos.AlunoDto.Nome">
+            <summary>
+            Nome e Sobrenome do Aluno
+            </summary>
+        </member>
+        <member name="P:SmartSchool.WebAPI.Dtos.AlunoDto.Telefone">
+            <summary>
+            Telefone do Aluno
+            </summary>
+        </member>
+        <member name="P:SmartSchool.WebAPI.Dtos.AlunoDto.Idade">
+            <summary>
+            Idade do Aluno
+            </summary>
+        </member>
+        <member name="P:SmartSchool.WebAPI.Dtos.AlunoDto.DataIni">
+            <summary>
+            Data de Inscrição do Aluno
+            </summary>
+        </member>
+        <member name="P:SmartSchool.WebAPI.Dtos.AlunoDto.Ativo">
+            <summary>
+            Situação do aluno (Ativo/Inativo)
+            </summary>
+        </member>
+        <member name="T:SmartSchool.WebAPI.Dtos.AlunoRegistrarDto">
+            <summary>
+            Este é o DTO de Aluno para registrar e atualizar no banco de dados.
+            </summary>
+        </member>
+        <member name="P:SmartSchool.WebAPI.Dtos.AlunoRegistrarDto.Id">
+            <summary>
+            Indentificador e chave do banco.
+            </summary>
+        </member>
+        <member name="P:SmartSchool.WebAPI.Dtos.AlunoRegistrarDto.Matricula">
+            <summary>
+            Chave do Aluno, para outros negócios na instituição.
+            </summary>
+        </member>
+        <member name="P:SmartSchool.WebAPI.Dtos.AlunoRegistrarDto.Nome">
+            <summary>
+            Nome e Sobrenome do Aluno.
+            </summary>
+        </member>
+    </members>
+</doc>

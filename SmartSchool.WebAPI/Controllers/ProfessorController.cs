@@ -9,22 +9,33 @@ using SmartSchool.WebAPI.Models;
 
 namespace SmartSchool.WebAPI.Controllers
 {
+    /// <summary>
+    /// Controller Class for Professor Entity
+    /// </summary>
     [ApiController]
-    [Route("api/[controller]")]
+    [ApiVersion("2.0")]
+    [Route("api/v{version:apiVersion}/[controller]")]
     public class ProfessorController : ControllerBase
     {
         private readonly IRepository _repo;
         private readonly IMapper _mapper;
 
+        /// <summary>
+        /// Constructor for ProfessorController Class
+        /// </summary>
+        /// <param name="repo"></param>
+        /// <param name="mapper"></param>
         public ProfessorController(IRepository repo, IMapper mapper)
         {
             _mapper = mapper;
             _repo = repo;
         }
 
-        // Métodos são:
-        // Get (todos os professores): OK
         // api/professores
+        /// <summary>
+        /// Method for returning all Professors
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IActionResult Get()
         {
@@ -33,14 +44,22 @@ namespace SmartSchool.WebAPI.Controllers
             return Ok(_mapper.Map<IEnumerable<ProfessorDto>>(professores));
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         [HttpGet("getRegister")]
         public IActionResult GetRegister()
         {
             return Ok(new ProfessorRegistrarDto());
         }
 
-        // GetById (Um único professor baseado em Id): OK
         // api/professores/id
+        /// <summary>
+        /// Method for returning a single Professor by ID
+        /// </summary>
+        /// <param name="id">ID for Professor to be searched</param>
+        /// <returns></returns>
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
@@ -50,8 +69,12 @@ namespace SmartSchool.WebAPI.Controllers
             return Ok(_mapper.Map<ProfessorDto>(professor));
         }
 
-        // Post: OK
         //api/professor
+        /// <summary>
+        /// Method for inserting a Professor in the DataBase
+        /// </summary>
+        /// <param name="model">Object for ProfessorRegistraDTO for updating DataBase</param>
+        /// <returns></returns>
         [HttpPost]
         public IActionResult Post(ProfessorRegistrarDto model)
         {
@@ -63,8 +86,13 @@ namespace SmartSchool.WebAPI.Controllers
             return BadRequest("Professor não cadastrado");
         }
 
-        // Put (passando um Id como parâmetro): OK
         // api/professor/id
+        /// <summary>
+        /// Method for Updating a Professor registry in the DataBase
+        /// </summary>
+        /// <param name="id">ID of the professor to be changed</param>
+        /// <param name="model">Object of ProfessorRegistrarDto to update DataBase</param>
+        /// <returns></returns>
         [HttpPut("{id}")]
         public IActionResult Put(int id, ProfessorRegistrarDto model)
         {
@@ -80,8 +108,13 @@ namespace SmartSchool.WebAPI.Controllers
             return BadRequest("Professor não atualizado");
         }
 
-        // Patch (passando um Id como parâmetro): OK
         // api/professor/id
+        /// <summary>
+        /// Method for updating Professor Registry in the database
+        /// </summary>
+        /// <param name="id">ID of the professor to be changed</param>
+        /// <param name="model">Object of ProfessorRegistrarDto to update DataBase</param>
+        /// <returns></returns>
         [HttpPatch("{id}")]
         public IActionResult Patch(int id, ProfessorRegistrarDto model)
         {
@@ -96,8 +129,12 @@ namespace SmartSchool.WebAPI.Controllers
             return BadRequest("Professor não atualizado");
         }
 
-        // Delete (passando um Id como parâmetro): OK
         // api/professor/id
+        /// <summary>
+        /// Method for deleting Professor registry from DataBase
+        /// </summary>
+        /// <param name="id">ID of the Professor to be deleted</param>
+        /// <returns></returns>
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {

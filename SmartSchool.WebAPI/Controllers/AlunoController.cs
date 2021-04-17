@@ -9,13 +9,25 @@ using SmartSchool.WebAPI.Models;
 
 namespace SmartSchool.WebAPI.Controllers
 {
+    /// <summary>
+    /// 
+    /// </summary>
     [ApiController]
-    [Route("api/[controller]")]
+    [ApiVersion("1.0")]
+    [Route("api/v{version:apiVersion}/[controller]")]
     public class AlunoController : ControllerBase
     {
+        /// <summary>
+        /// Dependency injection on IRepository and IMapper
+        /// </summary>
         public readonly IRepository _repo;
         private readonly IMapper _mapper;
 
+        /// <summary>
+        /// Constructor for AlunoController
+        /// </summary>
+        /// <param name="repo"></param>
+        /// <param name="mapper"></param>
         public AlunoController(IRepository repo, IMapper mapper)
         {
             _mapper = mapper;
@@ -23,6 +35,10 @@ namespace SmartSchool.WebAPI.Controllers
         }
 
         // api/aluno
+        /// <summary>
+        /// Method for returning all Students
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IActionResult Get()
         {
@@ -31,12 +47,21 @@ namespace SmartSchool.WebAPI.Controllers
             return Ok(_mapper.Map<IEnumerable<AlunoDto>>(alunos));
         }
 
+        /// <summary>
+        /// Method for returning all StudentsDTO
+        /// </summary>
+        /// <returns></returns>
         [HttpGet("getRegister")]
         public IActionResult GetRegister()
         {
             return Ok(new AlunoRegistrarDto());
         }
 
+        /// <summary>
+        /// Method for returning a single Student based off provided ID
+        /// </summary>
+        /// <param name="id">ID do Aluno</param>
+        /// <returns></returns>
         // api/aluno/id
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
@@ -50,6 +75,11 @@ namespace SmartSchool.WebAPI.Controllers
         }
 
         // api/aluno
+        /// <summary>
+        /// Method for adding a Student to DataBase
+        /// </summary>
+        /// <param name="model">Objeto da classe DTO para inclusão no banco de dados</param>
+        /// <returns></returns>
         [HttpPost]
         public IActionResult Post(AlunoRegistrarDto model)
         {
@@ -64,6 +94,12 @@ namespace SmartSchool.WebAPI.Controllers
 
         // api/aluno/1
         // utilizado para atualizar um registro (dar um update)
+        /// <summary>
+        /// Method for updating a Student in the DataBase
+        /// </summary>
+        /// <param name="id">ID do Aluno a ser atualizado</param>
+        /// <param name="model">Objeto da classe AlunoDTO para atualização</param>
+        /// <returns></returns>
         [HttpPut("{id}")]
         public IActionResult Put(int id, AlunoRegistrarDto model)
         {
@@ -81,6 +117,12 @@ namespace SmartSchool.WebAPI.Controllers
 
         // api/aluno/1
         // atualizar um registro parcialmente
+        /// <summary>
+        /// Method for updating partially a Student in the DataBase
+        /// </summary>
+        /// <param name="id">ID do Aluno a ser alterado parcialmente</param>
+        /// <param name="model">Objeto da classe AlunoDTO para atualização de banco de dados</param>
+        /// <returns></returns>
         [HttpPatch("{id}")]
         public IActionResult Patch(int id, AlunoRegistrarDto model)
         {
@@ -97,6 +139,11 @@ namespace SmartSchool.WebAPI.Controllers
 
         // api/aluno
         // deletar um registro
+        /// <summary>
+        /// Method for deleting a student from DataBase
+        /// </summary>
+        /// <param name="id">ID do aluno a ser deletado</param>
+        /// <returns></returns>
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
