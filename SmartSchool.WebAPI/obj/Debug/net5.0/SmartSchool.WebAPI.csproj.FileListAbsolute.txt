@@ -64,3 +64,8 @@ C:\Users\cmsulzbeck\OneDrive\Área de Trabalho\SmartSchool\SmartSchool.WebAPI\bi
 C:\Users\cmsulzbeck\OneDrive\Área de Trabalho\SmartSchool\SmartSchool.WebAPI\bin\Debug\net5.0\SmartSchool.WebAPI.xml
 C:\Users\cmsulzbeck\OneDrive\Área de Trabalho\SmartSchool\SmartSchool.WebAPI\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.Versioning.dll
 C:\Users\cmsulzbeck\OneDrive\Área de Trabalho\SmartSchool\SmartSchool.WebAPI\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer.dll
+C:\Users\cmsulzbeck\OneDrive\Área de Trabalho\SmartSchool\SmartSchool.WebAPI\bin\Debug\net5.0\dist\web.config
+C:\Users\cmsulzbeck\OneDrive\Área de Trabalho\SmartSchool\SmartSchool.WebAPI\bin\Debug\net5.0\dist\appsettings.Development.json
+C:\Users\cmsulzbeck\OneDrive\Área de Trabalho\SmartSchool\SmartSchool.WebAPI\bin\Debug\net5.0\dist\appsettings.json
+C:\Users\cmsulzbeck\OneDrive\Área de Trabalho\SmartSchool\SmartSchool.WebAPI\bin\Debug\net5.0\dist\SmartSchool.WebAPI.deps.json
+C:\Users\cmsulzbeck\OneDrive\Área de Trabalho\SmartSchool\SmartSchool.WebAPI\bin\Debug\net5.0\dist\SmartSchool.WebAPI.runtimeconfig.json
